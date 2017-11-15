@@ -1,0 +1,5 @@
+vendors/
+locals/
+dist/
+gulpfile.js
+webpack*
