@@ -33,11 +33,11 @@ var config = {
         loader: 'expose?$!expose?jQuery'
       },
       {
-        test: require.resolve(__dirname + '/common/base.js'),
+        test: path.join(__dirname, '/common/base.js'),
         loader: 'expose?base'
       },
       {
-        test: require.resolve(__dirname + '/vendors/pinyin.js'),
+        test: path.join(__dirname, '/vendors/pinyin.js'),
         loader: 'expose?Pinyin'
       },
       {
