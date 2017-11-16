@@ -1,10 +1,10 @@
-require('./style.scss')
+require('./style.scss');
 
-function createViewModel (params) {
-    var dataModel = require('./data.json');
-    var viewModel = ko.mapping.fromJS(dataModel);
+function createViewModel(params) {
+  var dataModel = require('./data.json');
+  var viewModel = ko.mapping.fromJS(dataModel);
 
-    return viewModel;
+  return viewModel;
 }
 
 ko.components.register('global-header', {

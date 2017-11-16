@@ -1,9 +1,9 @@
-require('./style.scss')
+require('./style.scss');
 
-function createViewModel (params) {
-    var viewModel = ko.mapping.fromJS(require('./data.json'));
+function createViewModel(params) {
+  var viewModel = ko.mapping.fromJS(require('./data.json'));
 
-    return viewModel;
+  return viewModel;
 }
 
 ko.components.register('global-footer', {

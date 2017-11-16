@@ -38,5 +38,8 @@ module.exports = {
         "arrow-spacing": "error", // 强制箭头函数的箭头前后使用一致的空格
         // "no-var": "error", // 要求使用 let 或 const 而不是 var
         "space-infix-ops": ["error", {"int32Hint": false}] // 要求操作符两边有空格
+    },
+    "globals": {
+        "ko": true
     }
 }
