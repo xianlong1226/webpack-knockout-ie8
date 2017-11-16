@@ -1,8 +1,9 @@
 require('./style.scss');
 
 function createViewModel(params) {
-  var dataModel = require('./data.json');
-  var viewModel = ko.mapping.fromJS(dataModel);
+  var viewModel = ko.mapping.fromJS(require('./data.json'));
+  
+  viewModel.data = params;
 
   return viewModel;
 }
