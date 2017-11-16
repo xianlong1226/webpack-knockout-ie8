@@ -4,15 +4,15 @@ config.devServer = {
   port: 8082,
   publicPath: '/',
   stats: {
-    colors: true
+    colors: true,
+    reasons: true,
+    warnings: true,
   },
   proxy: require('./locals').proxy,
-  inline: true,
+  inline: true, // 指定Automatic Refresh(Inline mode)
   disableHostCheck: true
 };
-config.progress = true;
-config.colors = true;
-config.devtool = 'cheap-module-eval-source-map';
+config.devtool = 'cheap-module-source-map';
 config.debug = true;
 
 module.exports = config;

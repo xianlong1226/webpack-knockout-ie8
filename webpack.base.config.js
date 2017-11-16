@@ -8,6 +8,9 @@ var es3ifyPlugin = require('es3ify-webpack-plugin');
 
 var extractCss = new ExtractTextPlugin('assets/css/[name].css');
 
+// 自定义插件
+var selfPlugins = require('./webpack.plugins.js');
+
 var config = {
   entry: {
     vendors: [
@@ -84,7 +87,8 @@ var config = {
         to: 'assets/vendors/'
       }
     ]),
-    new es3ifyPlugin()
+    new es3ifyPlugin(),
+    new selfPlugins()
   ],
   resolve: {
     root: [
