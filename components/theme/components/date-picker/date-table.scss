@@ -78,7 +78,7 @@
         background-color: $datepicker-inrange-hover-color;
       }
     }
-    &.current:not(.disabled) span {
+    &.current span {
       color: $white;
       background-color: $datepicker-active-color;
     }
@@ -105,6 +105,10 @@
       opacity: 1;
       cursor: not-allowed;
       color: $text-light;
+    }
+    &.disabled div span{
+      color: inherit;
+      background-color: inherit;
     }
     &.week {
       font-size: 80%;
