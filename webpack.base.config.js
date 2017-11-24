@@ -17,8 +17,8 @@ var config = {
       'jquery',
       path.join(__dirname, '/common/base.js'),
       path.join(__dirname, '/common/base.scss'),
-      path.join(__dirname, '/vendors/jquery.cookie.js'),
-      path.join(__dirname, '/vendors/pinyin.js')
+      //path.join(__dirname, '/vendors/jquery.cookie.js'),
+      //path.join(__dirname, '/vendors/pinyin.js')
     ]
   },
   output: {
@@ -78,7 +78,7 @@ var config = {
       'jQuery': 'jquery',
       'window.jQuery': 'jquery',
       'base': path.join(__dirname, '/common/base.js'),
-      'Pinyin': path.join(__dirname + '/vendors/pinyin.js')
+      //'Pinyin': path.join(__dirname + '/vendors/pinyin.js')
     }),
     new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /zh-cn/),
     extractCss,
@@ -95,7 +95,8 @@ var config = {
       __dirname
     ],
     alias: {
-      components: path.join(__dirname, 'components')
+      components: path.join(__dirname, 'components'),
+      vendors: path.join(__dirname, 'vendors')
     }
   }
 };

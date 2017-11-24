@@ -22,9 +22,21 @@ MyPlugin.prototype.apply = function (compiler) {
                         return this.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '');
                     };
                 }
+                if (!Array.prototype.indexOf) {
+                    Array.prototype.indexOf = function(item){
+                        var i = 0;
+                        for (i = this.length - 1; i >= 0; i--) {
+                            if (this[i] === item) {
+                                break;
+                            }
+                        }
+                        return i;
+                    }
+                }
             </script>
             <script src="/assets/vendors/knockout-3.4.2.js"></script>
             <script src="/assets/vendors/knockout.mapping-2.4.1.js"></script>
+            <script src="/assets/vendors/moment.min.js"></script>
             </head>`);
 
             return callback(null, htmlPluginData);

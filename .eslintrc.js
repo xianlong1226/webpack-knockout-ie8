@@ -16,7 +16,7 @@ module.exports = {
     },
     "plugins": [],
     "rules": {
-        "semi": 2, // 语句后要有分号
+        // "semi": 2, // 语句后要有分号
         "array-callback-return": "error", // 数组方法的回调函数中有 return 语句
         "block-scoped-var": "error", // 强制把变量的使用限制在其定义的作用域范围内
         "consistent-return": "error", // 要求函数所有的代码路径的返回值一致

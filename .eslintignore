@@ -1,4 +1,5 @@
 vendors/
+components/
 locals/
 dist/
 gulpfile.js
