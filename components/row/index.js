@@ -3,6 +3,9 @@ const {
 } = require('../utils/ko-component-utils')
 
 const props = {
+  clazz: {
+    type: String,
+  },
   gutter: {
     type: Number,
     observable: true
@@ -15,6 +18,14 @@ const props = {
 const ViewModel = function (params) {
   let self = this;
   parseProps(props, params, self)
+
+  const css = {}
+  let clazzs = this.clazz.trim().split(/\s+/)
+  for (let i = 0; i < clazzs.length; i++) {
+    css[clazzs[i]] = true
+  }
+  this.extraClazz = css
+
   // computed
   self.style = () => {
     const ret = {}

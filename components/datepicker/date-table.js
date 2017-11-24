@@ -30,10 +30,10 @@ const props = {
   onCellClick: {
     type: Function,
   },
-  minValue: {
+  minValue: { // 可选最小日期
     observable: true
   },
-  maxValue: {
+  maxValue: { // 可选最大日期
     observable: true
   }
 }
@@ -48,6 +48,9 @@ const Cell = function (dateData, options) {
   parseProps(props, options, self)
   self.cellValue = dateData
   self.label = dateData.date()
+  this.isDisabled = ko.pureComputed(() => {
+    return (this.minValue() && this.cellValue.valueOf() < this.minValue()) || (this.maxValue() && this.cellValue.valueOf() > this.maxValue())
+  })
   self.clazz = ko.pureComputed(() => {
     const result = {}
     const date = self.cellValue
@@ -74,6 +77,7 @@ const Cell = function (dateData, options) {
         }
       }
     }
+    result['is-disabled'] = this.isDisabled()
     result['prev-month'] = isMonthBefore
     result['next-month'] = isMonthAfter
     result['today'] = isToday
@@ -142,7 +146,7 @@ const DateTable = function ($container, options) {
 
   self.$container.on('click', 'td', (e) => {
     const cellData = ko.dataFor(e.target)
-    if (self.onCellClick) {
+    if (this.onCellClick && !cellData.isDisabled()) {
       self.onCellClick(cellData.cellValue)
     }
   })

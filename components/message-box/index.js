@@ -105,7 +105,7 @@ ViewModel.prototype.init = function () {
       self.close = self.getSafeClose()
       self.beforeClose(action, self, self.close)
     } else {
-      self.doClose()
+      self.visible(false)
     }
   }
 

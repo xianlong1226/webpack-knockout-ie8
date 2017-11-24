@@ -3,6 +3,9 @@ const {
 } = require('../utils/ko-component-utils')
 
 const props = {
+  clazz: {
+    type: String,
+  },
   span: {
     type: Number,
     'default': 24,
@@ -19,6 +22,13 @@ const ViewModel = function (params) {
   let self = this;
   parseProps(props, params, self)
 
+  const css = {}
+  let clazzs = this.clazz.trim().split(/\s+/)
+  for(let i = 0; i < clazzs.length; i++) {
+    css[clazzs[i]] = true
+  }
+  self.extraClazz = css
+
   self.classObj = () => {
     const ret = {};
     let arr = ['span', 'offset', 'pull', 'push']
@@ -28,6 +38,9 @@ const ViewModel = function (params) {
         prop === 'span' && (ret[`k-col-${self[prop]}`] = true)
         prop !== 'span' && (ret[`k-col-${prop}-${self[prop]}`] = true)
       }
+    }
+    for (let key in self.extraClazz) {
+      ret[key] = self.extraClazz[key]
     }
     return ret
   }

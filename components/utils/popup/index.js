@@ -87,6 +87,9 @@ function setMixin() {
       }
       popupManager.openModal(self._popupId, popupManager.nextZIndex(), self.modalAppendToBody ? undefined : dom, self.modalClass, self.modalFade)
       if (self.lockScroll) {
+        window.kamala = window.kamala || {}
+        window.kamala.modalCount = window.kamala.modalCount || 0
+        window.kamala.modalCount++
         if (!self.bodyOverflow) {
           self.bodyPaddingRight = $html.css('paddingRight')
           self.bodyOverflow = $html.css('overflow')
@@ -149,6 +152,7 @@ function setMixin() {
 
     setTimeout(() => {
       if (self.lockScroll) {
+        window.kamala.modalCount--
         popupManager.closeModal(self._popupId)
         if (self.modal && self.bodyOverflow !== 'hidden') {
           $html.css('overflow', self.bodyOverflow)

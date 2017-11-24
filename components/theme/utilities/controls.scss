@@ -49,8 +49,8 @@ $control-tiny-padding-horizontal: 4px !default;
   font-size: $size-small;
   padding: $control-small-padding-vertical $control-small-padding-horizontal;
   &.is-main {
-    padding-left: $control-small-padding-vertical * 1.5;
-    padding-right: $control-small-padding-vertical * 1.5;
+    padding-left: $control-small-padding-horizontal * 1.5;
+    padding-right: $control-small-padding-horizontal * 1.5;
   }
 }
 
@@ -58,8 +58,8 @@ $control-tiny-padding-horizontal: 4px !default;
   font-size: $size-tiny;
   padding: $control-tiny-padding-vertical $control-tiny-padding-horizontal;
   &.is-main {
-    padding-left: $control-tiny-padding-vertical * 1.5;
-    padding-right: $control-tiny-padding-vertical * 1.5;
+    padding-left: $control-tiny-padding-horizontal * 1.5;
+    padding-right: $control-tiny-padding-horizontal * 1.5;
   }
 }
 
@@ -67,7 +67,7 @@ $control-tiny-padding-horizontal: 4px !default;
   font-size: $size-large;
   padding: $control-large-padding-vertical $control-large-padding-horizontal;
   &.is-main {
-    padding-left: $control-large-padding-vertical * 1.5;
-    padding-right: $control-large-padding-vertical * 1.5;
+    padding-left: $control-large-padding-horizontal * 1.5;
+    padding-right: $control-large-padding-horizontal * 1.5;
   }
 }

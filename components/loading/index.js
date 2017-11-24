@@ -3,7 +3,7 @@ const template = `<div
       class="k-loading-mask">
       <div class="k-loading-spinner has-text-centered">
         <i class="fa fa-loading is-enormous is-light"></i>
-        <p class="k-loading-text is-mt-10 is-text-medium">数据加载中，请稍等</p>
+        <p class="k-loading-text is-mt-10 is-text-medium">处理中，请稍等..</p>
       </div>
     </div>`
 const $body = $(document.body)
@@ -87,7 +87,7 @@ const insertDom = (parent, el, binding) => {
 }
 const defaults = {
   visible: false,
-  text: '数据加载中，请稍等'
+  text: '处理中，请稍等..'
 }
 
 const doLoading = (el, options) => {

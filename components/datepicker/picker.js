@@ -178,9 +178,13 @@ const Picker = function ($container, options) {
   self.$container.append(pickerTemplate)
   self.$tableContainer = $container.find('.k-picker-panel__content')
 
+  this.weekStartDay = options.weekStartDay
   self.firstDayOfWeek = options.firstDayOfWeek
   self.value = ko.observable(options.value)
   self.currentValue = ko.observable(getCurrentValue(self.value()))
+
+  this.minValue = options.minValue
+  this.maxValue = options.maxValue
 
   self.onValueChange = options.onValueChange
 
@@ -196,6 +200,8 @@ const Picker = function ($container, options) {
     value: self.value,
     currentValue: self.currentValue,
     weekStartDay: self.weekStartDay,
+    minValue: this.minValue,
+    maxValue: this.maxValue,
     onCellClick: self.onCellClick.bind(self)
   })
 

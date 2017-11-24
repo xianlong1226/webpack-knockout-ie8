@@ -51,6 +51,7 @@
       transform: translateX(-50%);
       border-radius: 50%;
     }
+    &.is-disabled,
     &.next-month,
     &.prev-month {
       color: $datepicker-off-color;
@@ -68,13 +69,16 @@
     &.available:hover {
       color: $datepicker-text-hover-color;
     }
+    &.is-disabled:hover {
+      color: $datepicker-off-color;
+    }
     &.in-range div {
       background-color: $datepicker-inrange-color;
       &:hover {
         background-color: $datepicker-inrange-hover-color;
       }
     }
-    &.current span {
+    &.current:not(.disabled) span {
       color: $white;
       background-color: $datepicker-active-color;
     }
@@ -101,10 +105,6 @@
       opacity: 1;
       cursor: not-allowed;
       color: $text-light;
-    }
-    &.disabled div span{
-      background: inherit;
-      color: inherit;
     }
     &.week {
       font-size: 80%;
