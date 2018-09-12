@@ -1,5 +1,3 @@
-require('../../app-bootstrap.js');
-
 require('./style.scss');
 
 var viewModel = ko.mapping.fromJS(require('./data.json'));
